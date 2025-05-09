@@ -6,6 +6,6 @@ abstract class SalaryCalculator {
 class HourlyToSalary extends SalaryCalculator {
     @Override
     public double calculateNetPay(double hourlyWage) {
-        return (hourlyWage * 40 * 52) * (1 - taxRate/100); // Example: 40h/week, 52 weeks
+        return (hourlyWage * 40 * 52) * (1 - taxRate/100.0); // Example: 40h/week, 52 weeks
     }
 }
