@@ -1,3 +1,7 @@
+package com.group7.controller;
+
+
+
 class HourlyToSalary extends SalaryCalculator {
     @Override
     public double calculateNetPay(double hourlyWage) {
