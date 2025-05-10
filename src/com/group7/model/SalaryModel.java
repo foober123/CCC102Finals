@@ -1,5 +1,15 @@
 package com.group7.model;
 
+public class SalaryModel{
+private double hourlyWage;
+
+public SalaryModel(){
+this.hourlyWage = 0;
+}
+
+}
+
+/*
 abstract class SalaryCalculator {
     protected double taxRate;
     public abstract double calculateNetPay(double gross);
@@ -11,3 +21,4 @@ class HourlyToSalary extends SalaryCalculator {
     }
 }
 
+*/
