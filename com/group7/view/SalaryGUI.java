@@ -11,6 +11,9 @@ private JTextField hourlyWagefield;
 private JTextField hoursPerWeekfield;
 private JTextField taxRateField;
 
+public SalaryView(SalaryController controller) {
+        this.controller = controller;
+      }
 }
 
 public void createAndShowGUI(){
