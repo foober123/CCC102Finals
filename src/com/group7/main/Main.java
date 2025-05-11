@@ -18,7 +18,7 @@ public static void main(String[] args) {
  */
 
    javax.swing.SwingUtilities.invokeLater(() -> {
-    SalaryModel model = new SalaryModel();
+   SalaryModel model = new SalaryModel();
     SalaryController controller = new SalaryController(model);
     SalaryGUI view = new SalaryGUI(controller);
     controller.setView(view);
