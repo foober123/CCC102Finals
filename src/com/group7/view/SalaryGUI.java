@@ -14,21 +14,26 @@ private JTextField hourlyWagefield;
 private JTextField hoursPerWeekfield;
 private JTextField taxRateField;
 private JLabel resultLabel;
+private JButton calculate;
+
 
 public SalaryGUI(SalaryController controller) {
         this.controller = controller;
       }
 
 public void createAndShowGUI(){
+
 ImageIcon image = new ImageIcon("download.jfif");
-JButton calculate = new JButton("Calculate");
+calculate = new JButton("Calculate");
+calculate.addActionListener(this);
+
 
 frame = new JFrame("Salary Calculator");
 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 frame.setSize(400, 400);
 frame.setLocationRelativeTo(null);
-frame.setIconImage(image.getImage());
-frame.add(calculate);
+;
+
 
 frame.setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
@@ -82,9 +87,13 @@ gbc.fill = GridBagConstraints.NONE;
   @Override
   public void actionPerformed(ActionEvent e) {
     if(e.getSource()==calculate){
-      //
+      controller.SalaryCalc(hourlyWagefield.getText(), 
+      hoursPerWeekfield.getText(),
+      taxRateField.getText());
     }
-    
+    }
+     public void displayResult(String result) {
+        resultLabel.setText(result);
 
 }
 }
