@@ -8,15 +8,15 @@ import java.util.Scanner;
 
 class Main{
 public static void main(String[] args) {
-
- /*try {
+/*
+ try {
   UIManager.setLookAndFeel(new FlatDarkLaf());
  }
  catch (Exception e) {
   System.err.println("Failed to initialize LaF");
  }
-*/
- }
+ */
+
    javax.swing.SwingUtilities.invokeLater(() -> {
     SalaryModel model = new SalaryModel();
     SalaryController controller = new SalaryController(model);

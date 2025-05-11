@@ -19,25 +19,46 @@ public SalaryGUI(SalaryController controller) {
       }
 
 public void createAndShowGUI(){
-frame = new JFrame("Foobar23k");
+frame = new JFrame("Salary Calculator");
 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-frame.setSize(350, 200);
+frame.setSize(400, 400);
 frame.setLocationRelativeTo(null);
 
-frame.setLayout(new FlowLayout());
+frame.setLayout(new GridBagLayout());
+GridBagConstraints gbc = new GridBagConstraints();
+gbc.insets = new Insets(5, 5, 5, 5);
 
-// Input boxes
-    frame.add(new JLabel("Hourly Wage: "));
+gbc.anchor = GridBagConstraints.WEST;
+gbc.fill = GridBagConstraints.NONE;  
+
+// Input box
+    gbc.gridx = 0;
+    gbc.gridy = 0;
+    frame.add(new JLabel("Hourly Wage:"), gbc);
+
+    gbc.gridx = 1;
+    gbc.gridy = 0;
     hourlyWagefield = new JTextField(10);
-    frame.add(hourlyWagefield);
+    frame.add(hourlyWagefield, gbc);
 
-    frame.add(new JLabel("Hours Per Week:"));
+    gbc.gridx = 0;
+    gbc.gridy = 1;
+    frame.add(new JLabel("Hours Per Week:"), gbc);
     hoursPerWeekfield = new JTextField(10);
-    frame.add(hourlyWagefield);
 
-    frame.add(new JLabel("Tax Rate: "));
+    gbc.gridx = 1;
+    gbc.gridy = 1;
+    frame.add(hoursPerWeekfield, gbc);
+
+    gbc.gridx = 0;
+    gbc.gridy = 2;
+    frame.add(new JLabel("Tax Rate:"), gbc);
+
+    gbc.gridx = 1;
+    gbc.gridy = 2;
     taxRateField = new JTextField(10);
-    frame.add(taxRateField);
+    frame.add(taxRateField, gbc);
+
 
     frame.setVisible(true);
     }
