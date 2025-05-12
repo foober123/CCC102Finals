@@ -2,23 +2,25 @@ package com.group7.model;
 
 public class SalaryModel{
 private double hourlyWage;
-
+private double taxRate;
+private double hoursperweek;
+    
 public SalaryModel(){
-this.hourlyWage = 0;
+    this.hourlyWage = 0;
+    this.taxRate = 0;
+    this.hoursperweek = 0;
 }
-
+public void sethourlyWage(double hourlyWage){
+    this.hourlyWage = hourlyWage;
 }
-
-/*
-abstract class SalaryCalculator {
-    protected double taxRate;
-    public abstract double calculateNetPay(double gross);
+public void settaxRate(double taxRate){
+    this.taxRate = taxRate;
 }
-class HourlyToSalary extends SalaryCalculator {
-    @Override
-    public double calculateNetPay(double hourlyWage) {
-        return (hourlyWage * hoursperweek*weeks) * (1 - taxRate/100.0); // Example: 40h/week, 52 weeks
+public void sethoursperweek(double hoursperweek){
+    this.hoursperweek = hoursperweek;
+}
+public double calculateNetPay() {
+ return (hourlyWage * hoursperweek*52*(1-taxRate/100.0));
     }
 }
 
-*/
