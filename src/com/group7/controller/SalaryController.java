@@ -30,6 +30,10 @@ public void SalaryCalc(String hourlyWageStr, String hoursStr, String taxStr){
             view.displayResult("Tax rate is over 100!");
             return;
         }
+        else if (hours>168){
+            view.displayResult("Hours entered has exceeded 168!");
+            return;
+        }
         else
 
         // Update model
@@ -44,10 +48,6 @@ public void SalaryCalc(String hourlyWageStr, String hoursStr, String taxStr){
     catch(NumberFormatException e){
         view.displayResult("Please enter a valid number!");
     }
-
-//    catch(){
-//
-//    }
 
 }
 
