@@ -1,2 +1,2 @@
 #!/bin/bash
-javac -d bin $(find src -name "*.java")
+javac -cp .:lib/flatlaf-3.6.jar -d bin src/com/group7/**/*.java
