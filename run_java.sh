@@ -1,2 +1,2 @@
 #!/bin/bash
-java -cp bin com.group7.main.Main
+java -cp .:lib/flatlaf-3.6.jar:bin com.group7.main.Main
