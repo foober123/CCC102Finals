@@ -22,6 +22,16 @@ public void SalaryCalc(String hourlyWageStr, String hoursStr, String taxStr){
         double hours = Double.parseDouble(hoursStr);
         double tax = Double.parseDouble(taxStr);
 
+        if(wage<0 || hours<0 || tax<0){
+            view.displayResult("You cannot enter a negative number!");
+            return;
+        }
+        else if (tax>100){
+            view.displayResult("Tax rate is over 100!");
+            return;
+        }
+        else
+
         // Update model
         model.sethourlyWage(wage);
         model.sethoursperweek(hours);
@@ -34,6 +44,10 @@ public void SalaryCalc(String hourlyWageStr, String hoursStr, String taxStr){
     catch(NumberFormatException e){
         view.displayResult("Please enter a valid number!");
     }
+
+//    catch(){
+//
+//    }
 
 }
 
