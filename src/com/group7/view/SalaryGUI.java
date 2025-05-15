@@ -24,7 +24,7 @@ public class SalaryGUI extends JFrame implements ActionListener {
     }
 
     // code to run dark mode
-    public void darkMode(GridBagConstraints gbc){
+    public void darkMode(){
         JToggleButton toggleDarkmode = new JToggleButton("Dark mode");
         toggleDarkmode.addActionListener(e -> {
             try {
@@ -38,13 +38,19 @@ public class SalaryGUI extends JFrame implements ActionListener {
                 ex.printStackTrace();
             }
         });
+    GridBagConstraints gbcDark = new GridBagConstraints();
+    gbcDark.gridx = 0;
+    gbcDark.gridy = 99; // way down, after all other content
+    gbcDark.gridwidth = 1;
+    gbcDark.anchor = GridBagConstraints.SOUTHWEST;
+    gbcDark.weightx = 1;
+    gbcDark.weighty = 1; // eats vertical space to push down
+    gbcDark.fill = GridBagConstraints.NONE;
+    gbcDark.insets = new Insets(0, 0, 5, 0); // little breathing room at bottom
 
-        gbc.gridx = 0;
-        gbc.gridy = 6;
-        gbc.gridwidth = 2;
-        gbc.anchor = GridBagConstraints.CENTER;
-        frame.add(toggleDarkmode, gbc);
-    }
+    frame.add(toggleDarkmode, gbcDark);
+         }
+
     public void createAndShowGUI() {
         calculate = new JButton("Calculate");
         calculate.addActionListener(this);
@@ -98,19 +104,19 @@ public class SalaryGUI extends JFrame implements ActionListener {
         gbc.anchor = GridBagConstraints.CENTER;
         frame.add(calculate, gbc);
 
-        gbc.gridx = 2;
-        gbc.gridy = 3; 
+        gbc.gridx = 0;
+        gbc.gridy = 5; 
         clear = new JButton("Clear");
         clear.addActionListener(this);
         frame.add(clear, gbc);
 
         gbc.gridx = 0;
-        gbc.gridy = 5;
+        gbc.gridy = 7;
         resultLabel = new JLabel("", SwingConstants.CENTER);
         resultLabel.setFont(new Font("Arial", Font.BOLD, 14));
         frame.add(resultLabel, gbc);
 
-        darkMode(gbc);
+        darkMode();
         frame.setVisible(true);
     }
 
