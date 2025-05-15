@@ -16,6 +16,7 @@ public class SalaryGUI extends JFrame implements ActionListener {
     private JTextField taxRateField;
     private JLabel resultLabel;
     private JButton calculate;
+    private JButton clear;
 
 
     public SalaryGUI(SalaryController controller) {
@@ -39,7 +40,7 @@ public class SalaryGUI extends JFrame implements ActionListener {
         });
 
         gbc.gridx = 0;
-        gbc.gridy = 5;
+        gbc.gridy = 6;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.CENTER;
         frame.add(toggleDarkmode, gbc);
@@ -97,7 +98,14 @@ public class SalaryGUI extends JFrame implements ActionListener {
         gbc.anchor = GridBagConstraints.CENTER;
         frame.add(calculate, gbc);
 
-        gbc.gridy = 4;
+        gbc.gridx = 2;
+        gbc.gridy = 3; 
+        clear = new JButton("Clear");
+        clear.addActionListener(this);
+        frame.add(clear, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 5;
         resultLabel = new JLabel("", SwingConstants.CENTER);
         resultLabel.setFont(new Font("Arial", Font.BOLD, 14));
         frame.add(resultLabel, gbc);
@@ -106,12 +114,25 @@ public class SalaryGUI extends JFrame implements ActionListener {
         frame.setVisible(true);
     }
 
+
+    private void clearFields() {
+        hourlyWagefield.setText("");
+        hoursPerWeekfield.setText("");
+        taxRateField.setText("");
+        resultLabel.setText("");
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == calculate) {
-            controller.SalaryCalc(hourlyWagefield.getText(),
+            controller.SalaryCalc(
+                    hourlyWagefield.getText(),
                     hoursPerWeekfield.getText(),
-                    taxRateField.getText());
+                    taxRateField.getText()
+                    );
+        }
+        else if(e.getSource() == clear){
+            clearFields();
         }
     }
 
@@ -119,4 +140,7 @@ public class SalaryGUI extends JFrame implements ActionListener {
         resultLabel.setText(result);
 
     }
+
+
+
 }
