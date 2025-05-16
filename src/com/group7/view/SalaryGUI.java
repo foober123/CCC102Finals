@@ -14,7 +14,7 @@ public class SalaryGUI extends JFrame implements ActionListener {
     private JTextField hourlyWagefield;
     private JTextField hoursPerWeekfield;
     private JTextField taxRateField;
-    private JLabel resultLabel;
+    private JTextArea resultLabel;
     private JButton calculate;
     private JButton clear;
 
@@ -121,9 +121,11 @@ public class SalaryGUI extends JFrame implements ActionListener {
 
         gbc.gridx = 0;
         gbc.gridy = 7;
-        resultLabel = new JLabel("", SwingConstants.CENTER);
+        resultLabel = new JTextArea(2, 20);
+        resultLabel.setEditable(false);
         resultLabel.setFont(new Font("Arial", Font.BOLD, 14));
-        frame.add(resultLabel, gbc);
+        JScrollPane scrollPane = new JScrollPane(resultLabel);
+        frame.add(scrollPane, gbc);
 
         darkMode();
         frame.setVisible(true);
