@@ -52,6 +52,15 @@ public class SalaryGUI extends JFrame implements ActionListener {
          }
 
     public void createAndShowGUI() {
+
+
+        try{
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        }
+        catch (UnsupportedLookAndFeelException e){
+            e.printStackTrace();
+        }
+
         calculate = new JButton("Calculate");
         calculate.addActionListener(this);
 

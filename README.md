@@ -7,7 +7,7 @@ This Java Swing GUI application helps users calculate their **net income** from 
 - Allows customization of tax percentage
 
 ## Screenshot
-I'll do this later
+![Text](assets/SampleGUI.png)
 
 ## Requirements
 - **Java 8** or higher
@@ -17,9 +17,6 @@ I'll do this later
 **Linux/MacOS**
 do ./build-java.sh to build program
 do ./run-java.sh to run program
-
-**Windows**
-.bat script in progress
 
 ## Error Handling
 The program takes several factors into consideration when running, and it includes handling for common exceptions:
